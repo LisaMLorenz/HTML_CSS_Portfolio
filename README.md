@@ -26,7 +26,7 @@ N/A
 
 ## Usage
 
-https://lisamlorenz.github.io/Challenge1/
+https://lisamlorenz.github.io/portfolio_lisa_lorenz/
 
 When the page is loaded the page presents your name, a recent photo or avatar, and links to sections about you, your work, and how to contact you
 
