@@ -43,6 +43,9 @@ When the page is resized or viewed on various screens and devices then the layou
 
 // Note: this was partly full-filled, some of the objects overlap.
 
+[screenshot top](images/Screenshot_Deployed_Site.png)
+[WireFrame](images/WireFrame_Portfolio.png)
+
 
 ## Credits
 
