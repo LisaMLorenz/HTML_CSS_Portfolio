@@ -1,0 +1,95 @@
+/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+:root {
+  --dark: rgb(15, 54, 54);
+  --light: rgb(198, 212, 46);
+}
+
+#headline {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: none;
+  position: fixed top;
+  padding: 25px;
+  max-width: 550px;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  background-color: var(--light);
+  padding: 10px;
+}
+
+#aboutMe {
+
+}
+
+.website1 , .website2, .website3 {
+
+  padding: 10px;
+  margin: 10px;
+  background-color: grey;
+  color: white;
+}
+
+
+
+/* Grid CSS */
+
+#heroGrid {
+  margin: 0px 5%;
+  display: grid;
+  min-height: 500px;
+  height: 70vh;
+  grid-template-areas:
+    "website1 website1 website1"
+    "website2 website3 website3"
+    ;
+}
+
+.website1 {
+  grid-area: website1;
+  background-image: url("../images/SailorMoon.jpg");
+}
+
+.website2 {
+  grid-area: website2;
+  background-image: url("../images/Jakes_Eatery_Grab.png");
+}
+
+.website3 {
+  grid-area: website3;
+  background-image: url("../images/lisa_picture.gif");
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+
+
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+  /* on tablets, set columns to only be 50% of the width and not grow */
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* select the last child to grow to full width if it has space to grow */
+  .card-column:last-child {
+    flex-grow: 1;
+  }
+}
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+  header {
+    width: 75%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
