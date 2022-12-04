@@ -7,6 +7,7 @@
 #headline {
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: none;
+  border-radius: 10px;
   position: fixed top;
   padding: 25px;
   max-width: 550px;
@@ -16,28 +17,48 @@
 .nav {
   display: flex;
   justify-content: space-around;
+  text-justify: auto;
   text-decoration: none;
   background-color: var(--light);
-  padding: 10px;
+  padding: 50px;
 }
 
-#aboutMe {
+#AboutMe {
 
+  
 }
 
 .website1 , .website2, .website3 {
-
   padding: 10px;
   margin: 10px;
   background-color: grey;
   color: white;
+  border-radius: 10px;
 }
 
-
+.about1 , .about2 {
+  padding: 10px;
+  margin: 10px;
+  background-color: grey;
+  color: white;
+  border-radius: 10px;
+}
 
 /* Grid CSS */
 
-#heroGrid {
+#aboutGrid {
+  margin: 0px 5%;
+  display: grid;
+  min-height: 250px;
+  max-height: 250px;
+  height: 70vh;
+  grid-template-areas:
+    "about1 about2"
+    "about1 about1"
+    ;
+}
+
+#workGrid {
   margin: 0px 5%;
   display: grid;
   min-height: 500px;
@@ -51,11 +72,14 @@
 .website1 {
   grid-area: website1;
   background-image: url("../images/SailorMoon.jpg");
+  
+  
 }
 
 .website2 {
   grid-area: website2;
-  background-image: url("../images/Jakes_Eatery_Grab.png");
+  background-image: url ("../images/Jakes_Eatery_Grab.png");
+  a
 }
 
 .website3 {
@@ -65,7 +89,14 @@
   cursor: pointer;
 }
 
+.footer {
+  display: flex;
+  text-justify: center;
+  justify-content: center;
+  background-color: var(--light);
+  padding: 50px;
 
+}
 
 
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
