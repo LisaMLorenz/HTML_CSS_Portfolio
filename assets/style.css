@@ -1,34 +1,43 @@
 /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
 :root {
-  --dark: rgb(15, 54, 54);
-  --light: rgb(198, 212, 46);
+  --dark: rgb(57, 61, 61);
+  --light: rgb(212, 132, 46);
 }
 
 #headline {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
   border-bottom: none;
   border-radius: 10px;
   position: fixed top;
-  padding: 25px;
+  font-size: larger;
+  padding: 15px;
+  color: var(--dark);
   max-width: 550px;
-  z-index: 100;
 }
 
 .nav {
   display: flex;
   justify-content: space-around;
   text-justify: auto;
-  text-decoration: none;
   background-color: var(--light);
   padding: 50px;
+  color: var(--dark);
 }
 
-#AboutMe {
-
-  
+#about1 {
+  grid-area: about1;
+  background-color: var(--dark);
+  justify-content: space-around;
 }
 
-.website1 , .website2, .website3 {
+#about3 {
+  grid-area: about3;
+  justify-content: space-around;
+}
+
+.website1,
+.website2,
+.website3 {
   padding: 10px;
   margin: 10px;
   background-color: grey;
@@ -36,12 +45,19 @@
   border-radius: 10px;
 }
 
-.about1 , .about2 {
-  padding: 10px;
+.about1,
+.about2,
+.about3 {
+  padding: 5px;
   margin: 10px;
-  background-color: grey;
-  color: white;
+  color: var(--light);
   border-radius: 10px;
+}
+
+.about2 {
+  opacity: 80%;
+  background-color: var(--light);
+  color: var(--dark);
 }
 
 /* Grid CSS */
@@ -50,12 +66,11 @@
   margin: 0px 5%;
   display: grid;
   min-height: 250px;
-  max-height: 250px;
-  height: 70vh;
+  height: 50vh;
   grid-template-areas:
-    "about1 about2"
-    "about1 about1"
-    ;
+    "about3 about1 about2 about2"
+    "about3 about1 about2 about2"
+  ;
 }
 
 #workGrid {
@@ -66,27 +81,25 @@
   grid-template-areas:
     "website1 website1 website1"
     "website2 website3 website3"
-    ;
+  ;
 }
 
 .website1 {
   grid-area: website1;
   background-image: url("../images/SailorMoon.jpg");
-  
-  
+
 }
 
 .website2 {
   grid-area: website2;
-  background-image: url ("../images/Jakes_Eatery_Grab.png");
-  a
+  background-image: url("../images/Jakes_Eatery.png");
+  background-color: grey;
+
 }
 
 .website3 {
   grid-area: website3;
-  background-image: url("../images/lisa_picture.gif");
-  justify-content: space-around;
-  cursor: pointer;
+  background-image: url("../images/Horiseon.png");
 }
 
 .footer {
@@ -94,33 +107,21 @@
   text-justify: center;
   justify-content: center;
   background-color: var(--light);
-  padding: 50px;
+  padding: 30px;
 
 }
 
-
-/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
-@media screen and (min-width: 768px) {
-  /* on tablets, set columns to only be 50% of the width and not grow */
-  .card-column {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  /* select the last child to grow to full width if it has space to grow */
-  .card-column:last-child {
-    flex-grow: 1;
-  }
+.nav a {
+  text-decoration: none;
+  color: var(--dark);
+  text-justify: inter-cluster;
 }
 
-/* media query for larger screens */
-@media screen and (min-width: 992px) {
-  header {
-    width: 75%;
-  }
+/* media query for small screens */
 
-  .card-column {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
+@media only screen and (max-width: 800px) {
+
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
   }
-}
